@@ -60,11 +60,15 @@ async function checkWeather(city) {
 
 **Key concepts explained:**
 
-- **`async/await`**: This makes the function wait for the API response before continuing. Weather data takes time to fetch from the internet.
+- **`async/await`**: This is how JavaScript handles operations that take time (like fetching data from the internet). 
+  - `async` tells JavaScript "this function will take time to complete"
+  - `await` tells JavaScript "wait here until this operation finishes before continuing"
+  - Without this, your code would try to use the weather data before it arrives, causing errors
+  - Think of it like ordering food - you wait for it to be ready before eating!
 
-- **`fetch()`**: Sends a request to the weather API and returns the response.
+- **`fetch()`**: Sends a request to the weather API and returns a "promise" (a promise that data will come back eventually).
 
-- **`response.json()`**: Converts the API response into a JavaScript object you can work with.
+- **`response.json()`**: Converts the API response (which comes as text) into a JavaScript object you can work with.
 
 - **Why the repeated display code?**: 
   - When there's an error (404), show error message and hide weather display
@@ -85,6 +89,42 @@ searchBtn.addEventListener("click", ()=> {
 - When someone clicks the search button, it runs the code inside the arrow function `()=> {}`
 - `searchBox.value` gets whatever text the user typed in the input field
 - It then calls `checkWeather()` with that city name
+
+## Methods Used
+
+### DOM Selection Methods
+- `document.querySelector()` - Select HTML elements using CSS selectors
+- `document.querySelectorAll()` - Select multiple elements (not used in this app)
+
+### DOM Manipulation Methods
+- `innerHTML` - Set the content inside HTML elements
+- `style.display` - Show or hide elements by changing their display property
+
+### API and Data Methods
+- `fetch()` - Make HTTP requests to external APIs
+- `response.json()` - Convert API response to JavaScript object
+- `Math.round()` - Round numbers to whole numbers
+
+### Event Handling Methods
+- `addEventListener()` - Listen for user interactions (clicks, key presses)
+
+## Key Learning Outcomes
+
+### 1. **DOM Element Selection**
+- Using `querySelector()` to find HTML elements
+- Understanding CSS selectors for targeting specific elements
+- Creating JavaScript references to HTML elements
+
+### 2. **Handling APIs with async/await**
+- Understanding asynchronous programming concepts
+- Using `async/await` to handle time-consuming operations
+- Working with external APIs and JSON data
+- Error handling for API responses
+
+### 3. **Event Listeners**
+- Responding to user interactions (button clicks)
+- Understanding event-driven programming
+- Connecting user actions to application functionality
 
 ## Recommendations for Improvement
 
